@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uniprep Hub - Products</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    /* 🔝 Topbar */
+    .topbar {
+      background: black;
+      color: white;
+      padding: 6px 40px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a {
+      color: white;
+      text-decoration: none;
+    }
+    .topbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* 🟠 Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+    nav a.active,
+    nav a:hover {
+      color: orange;
+    }
+
+    /* 🟠 Products Section */
+    .products {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .products h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #222;
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-content {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-content h3 {
+      margin: 8px 0;
+      font-size: 20px;
+      color: #222;
+      min-height: 48px; /* equal height for names */
+    }
+    .product-content p {
+      font-size: 15px;
+      color: #444;
+      margin: 5px 0;
+    }
+    .product-price {
+      font-weight: bold;
+      color: #e67e22;
+      margin-top: auto;
+    }
+    .btn {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: 0.3s;
+      font-weight: bold;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #ff6600;
+    }
+
+    /* 🟠 Footer */
+    footer {
+      background: black;
+      color: white;
+      padding: 50px 40px;
+      margin-top: 50px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+    footer h4 {
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: white;
+      display: block;
+      margin: 5px 0;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .copy {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+    }
+
+    /* 📱 Responsive */
+    @media(max-width: 992px) {
+      .product-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 600px) {
+      .product-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 Topbar -->
+  <div class="topbar">
+    <span>📧 <a href="mailto:uniprep85@gmail.com">uniprep85@gmail.com</a></span>
+    <span>📍 <a href="https://www.google.com/maps?q=B-5/18+Sector+K+Aliganj+Lucknow" target="_blank">B-5/18 Sector K Aliganj Lucknow</a></span>
+  </div>
+
+  <!-- 🟠 Navbar -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo01.png" alt="Uniprep Hub Logo">
+      Uniprep Hub
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- 🟠 Products Section -->
+  <section class="products">
+    <h2>Our Courses & Products</h2>
+    <div class="product-list" id="list">
+      <!-- Firebase से Products यहां dynamically load होंगे -->
+    </div>
+  </section>
+
+  <!-- 🟠 Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Essential Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <p>Exam Preparation</p>
+        <p>Mock Tests</p>
+        <p>Personalized Coaching</p>
+        <p>Online Resources</p>
+      </div>
+      <div>
+        <h4>Join Our Community</h4>
+        <p>Discussion Forums</p>
+        <p>Webinars</p>
+        <p>Career Guidance</p>
+        <p>Programs</p>
+      </div>
+      <div>
+        <h4>Connect With Us</h4>
+        <p>📧 <a href="mailto:uniprep85@gmail.com">uniprep85@gmail.com</a></p>
+        <p>📍 Lucknow</p>
+        <p>🔗 Facebook • Twitter • Instagram</p>
+      </div>
+    </div>
+    <p class="copy">© 2025 Uniprep Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- 🔥 Firebase Products Fetch -->
+  <script type="module">
+    // Import Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+    import { 
+      getFirestore, collection, query, orderBy, onSnapshot 
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+    // ✅ Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDFlP5L0IPMzO68hiXZXFhGExkId4ol2dc",
+      authDomain: "coching-web.firebaseapp.com",
+      projectId: "coching-web",
+      storageBucket: "coching-web.firebasestorage.app",
+      messagingSenderId: "901288631851",
+      appId: "1:901288631851:web:d51a205698f7f46cf7946e",
+      measurementId: "G-B8CMPTPVMD"
+    };
+
+    // Initialize Firebase & Firestore
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const list = document.getElementById("list");
+
+    // ✅ Fetch products ordered by creation date (latest first)
+    const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+
+    onSnapshot(q, (snap) => {
+      list.innerHTML = "";
+      snap.forEach(docu => {
+        const d = docu.data();
+        const div = document.createElement("div");
+        div.className = "product-card";
+        div.innerHTML = `
+          <img src="${d.imageUrl}" alt="${d.name}">
+          <div class="product-content">
+            <h3>${d.name}</h3>
+            <p>${d.desc}</p>
+            <p class="product-price">₹ ${d.price}</p>
+            <button class="btn" onclick="window.location.href='https://wa.me/918299883011?text=I want to enroll in ${d.name}'">Buy / Enroll</button>
+          </div>
+        `;
+        list.appendChild(div);
+      });
+    });
+  </script>
+</body>
+</html>

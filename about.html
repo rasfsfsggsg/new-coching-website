@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uniprep Hub - About Us</title>
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#333;}
+    .topbar{background:black;color:white;padding:6px 40px;font-size:14px;display:flex;justify-content:space-between;align-items:center;}
+    .topbar a{color:white;text-decoration:none;}
+    .topbar a:hover{text-decoration:underline;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:12px 40px;background:white;border-bottom:1px solid #ddd;}
+    .logo{font-size:20px;font-weight:bold;display:flex;align-items:center;}
+    .logo img{height:40px;margin-right:8px;}
+    nav a{margin:0 12px;text-decoration:none;color:black;font-weight:500;}
+    nav a.active,nav a:hover{color:orange;}
+
+    .about{padding:50px 20px;max-width:1200px;margin:auto;}
+    .about h2{font-size:28px;margin:0 0 10px;}
+    .about p.lead{font-size:16px;color:#555;line-height:1.6;margin:0 0 30px;}
+
+    .section-head{display:flex;align-items:center;gap:10px;margin:35px 0 16px;}
+    .section-head h3{margin:0;font-size:22px;color:#222;}
+    .section-head .bar{flex:1;height:1px;background:#eee;}
+
+    /* ✅ Horizontal Scroll Rows */
+    .scroll-row{
+      display:flex;gap:20px;overflow-x:auto;padding-bottom:10px;
+      scroll-snap-type:x mandatory;
+    }
+    .scroll-row::-webkit-scrollbar{height:8px;}
+    .scroll-row::-webkit-scrollbar-thumb{background:#ccc;border-radius:10px;}
+
+    .card{
+      background:#f8f9ff;border:1px solid #eef;box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      border-radius:12px;padding:20px;text-align:center;transition:transform .25s, box-shadow .25s;cursor:pointer;
+      min-width:260px;scroll-snap-align:start;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,0.12);}
+    .avatar{
+      width:120px;height:120px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 12px;border:4px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,0.12);
+    }
+    .card h4{margin:6px 0 4px;color:#222;font-size:18px}
+    .muted{color:#666;font-size:14px;margin:2px 0;}
+    .desc{color:#444;font-size:14px;line-height:1.5;margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;}
+    .facility-card .avatar{border-radius:12px;width:100%;height:160px;}
+    .facility-card{text-align:left;min-width:300px;}
+    .facility-card h4{margin-top:10px}
+
+    footer{background:black;color:white;padding:50px 40px;margin-top:50px;}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;}
+    footer h4{margin-bottom:10px;}
+    footer a{color:white;display:block;margin:5px 0;text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
+    .copy{text-align:center;margin-top:30px;font-size:14px;border-top:1px solid #444;padding-top:15px;}
+    .empty{padding:12px;color:#777;text-align:center;border:1px dashed #ddd;border-radius:8px;background:#fafafa;}
+
+    /* Overlay */
+    .overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,0.55);
+      display:none;align-items:center;justify-content:center;padding:20px;z-index:9999;
+    }
+    .overlay.show{display:flex;}
+    .sheet{width:min(900px,95vw);max-height:90vh;overflow:auto;background:white;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,0.35);}
+    .sheet-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:2;}
+    .sheet-title{font-size:18px;font-weight:700;color:#111;}
+    .close-btn{background:#111;color:#fff;border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:600}
+    .sheet-body{padding:18px;}
+    .sheet-body .hero{width:140px;height:140px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.15);display:block;margin:0 auto 12px;}
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:700px){.detail-grid{grid-template-columns:1fr;}}
+    .meta-row{font-size:15px;color:#333;}
+    .meta-row b{color:#111;}
+    .long-text{margin-top:10px;font-size:15px;line-height:1.7;color:#2e2e2e;white-space:pre-wrap;}
+    .images-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
+    @media(max-width:700px){.images-wrap{grid-template-columns:repeat(2,1fr);}}
+    .images-wrap img{width:100%;height:160px;object-fit:cover;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.1);}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>📧 <a href="mailto:uniprep85@gmail.com">uniprep85@gmail.com</a></span>
+    <span>📍 <a href="https://www.google.com/maps?q=B-5/18+Sector+K+Aliganj+Lucknow" target="_blank"> B-5/18 Sector K Aliganj Lucknow</a></span>
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="assets/logo01.png" alt="Uniprep Hub Logo" />
+      Uniprep Hub
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>About Uniprep Hub</h2>
+    <p class="lead">We help students crack university entrance exams through structured courses, analytics-driven test series, and mentor support.</p>
+
+    <div class="section-head"><h3>👨‍🏫 Our Teachers</h3><div class="bar"></div></div>
+    <div id="teacherRow" class="scroll-row"></div>
+    <div id="teacherEmpty" class="empty" style="display:none;">No teacher data available.</div>
+
+    <div class="section-head" style="margin-top:42px;"><h3>🎓 Our Toppers / Students</h3><div class="bar"></div></div>
+    <div id="studentRow" class="scroll-row"></div>
+    <div id="studentEmpty" class="empty" style="display:none;">No student data available.</div>
+
+    <div class="section-head" style="margin-top:42px;"><h3>🏫 Facilities & Campus</h3><div class="bar"></div></div>
+    <div id="facilityRow" class="scroll-row"></div>
+    <div id="facilityEmpty" class="empty" style="display:none;">No facility data available.</div>
+  </section>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay">
+    <div class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-title" id="detailTitle">Details</div>
+        <button class="close-btn" id="closeOverlay">Close ✕</button>
+      </div>
+      <div class="sheet-body" id="detailBody"></div>
+    </div>
+  </div>
+
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+  // 🔹 Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyDFlP5L0IPMzO68hiXZXFhGExkId4ol2dc",
+    authDomain: "coching-web.firebaseapp.com",
+    projectId: "coching-web",
+    storageBucket: "coching-web.firebasestorage.app",
+    messagingSenderId: "901288631851",
+    appId: "1:901288631851:web:d51a205698f7f46cf7946e",
+    measurementId: "G-B8CMPTPVMD"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // 🔹 Overlay Setup
+  const overlay = document.getElementById('overlay');
+  const detailTitle = document.getElementById('detailTitle');
+  const detailBody = document.getElementById('detailBody');
+  const closeOverlay = document.getElementById('closeOverlay');
+  closeOverlay.onclick = () => overlay.classList.remove('show');
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('show'); });
+
+  function openDetail(type, item){
+    detailTitle.textContent =
+      type === 'teacher' ? 'Teacher Details' :
+      type === 'student' ? 'Student Details' : 'Facility Details';
+
+    if(type==='facility'){
+      detailBody.innerHTML = `
+        <img class="hero" style="border-radius:14px"
+          src="${item.image || item.images?.[0] || 'https://via.placeholder.com/600x400?text=Facility'}" />
+        <div class="long-text"><b>About:</b>\n${item.about || item.desc || ''}</div>
+      `;
+    } else {
+      detailBody.innerHTML = `
+        <img class="hero" src="${item.image || 'https://via.placeholder.com/300x300?text=Image'}" />
+        <div class="detail-grid">
+          <div class="meta-row"><b>Name:</b> ${item.name || ''}</div>
+          <div class="meta-row"><b>${type==='teacher' ? 'Rank' : 'Exam/Rank'}:</b> ${item.rank || '-'}</div>
+          ${type==='teacher' ? `<div class="meta-row"><b>Rating:</b> ${item.rating || '-'} / 5</div>` : ''}
+        </div>
+        <div class="long-text"><b>Review:</b>\n${item.review || '-'}</div>
+      `;
+    }
+    overlay.classList.add('show');
+  }
+
+  function createCard(item,type){
+    const div=document.createElement('div');
+    div.className = type==='facility' ? 'card facility-card' : 'card';
+    const img=item.image || item.images?.[0] || 'https://via.placeholder.com/240?text=Image';
+    const title=item.name || item.title || 'Unnamed';
+    const desc=item.review || item.desc || item.about || '';
+    const rank=item.rank ? `<div class="muted">🏅 ${item.rank}</div>` : '';
+    const rating=type==='teacher' && item.rating ? `<div class="muted">⭐ ${item.rating}/5</div>` : '';
+    div.innerHTML=`
+      <img class="avatar" src="${img}">
+      <h4>${title}</h4>
+      ${rank}${rating}
+      <div class="desc">${desc}</div>
+    `;
+    div.onclick=()=>openDetail(type,item);
+    return div;
+  }
+
+  async function loadData(){
+    try {
+      const snapshot = await getDocs(collection(db, "about"));
+      const allData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+      const teachers = allData.filter(d => d.id.startsWith("teacher_"));
+      const students = allData.filter(d => d.id.startsWith("student_"));
+      const facilities = allData.filter(d => d.id.startsWith("facility_"));
+
+      // Teachers
+      const tRow = document.getElementById('teacherRow');
+      const tEmpty = document.getElementById('teacherEmpty');
+      if (teachers.length) {
+        tEmpty.style.display = 'none';
+        teachers.forEach(t => tRow.appendChild(createCard(t,'teacher')));
+      } else tEmpty.style.display = 'block';
+
+      // Students
+      const sRow = document.getElementById('studentRow');
+      const sEmpty = document.getElementById('studentEmpty');
+      if (students.length) {
+        sEmpty.style.display = 'none';
+        students.forEach(s => sRow.appendChild(createCard(s,'student')));
+      } else sEmpty.style.display = 'block';
+
+      // Facilities
+      const fRow = document.getElementById('facilityRow');
+      const fEmpty = document.getElementById('facilityEmpty');
+      if (facilities.length) {
+        fEmpty.style.display = 'none';
+        facilities.forEach(f => fRow.appendChild(createCard(f,'facility')));
+      } else fEmpty.style.display = 'block';
+
+    } catch (err) {
+      console.error("❌ Firestore load error:", err);
+    }
+  }
+
+  loadData();
+</script>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Essential Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <p>Exam Preparation</p><p>Mock Tests</p><p>Personalized Coaching</p><p>Online Resources</p>
+      </div>
+      <div>
+        <h4>Join Our Community</h4>
+        <p>Discussion Forums</p><p>Webinars</p><p>Career Guidance</p><p>Programs</p>
+      </div>
+      <div>
+        <h4>Connect With Us</h4>
+        <p>📧 <a href="mailto:uniprep85@gmail.com">uniprep85@gmail.com</a></p>
+        <p>📍 <a href="https://www.google.com/maps?q=B-5/18+Sector+K+Aliganj+Lucknow" target="_blank">B-5/18 Sector K Aliganj Lucknow</a></p>
+        <p>🔗 Facebook • Twitter • Instagram</p>
+      </div>
+    </div>
+    <p class="copy">© 2025 Uniprep Hub. All rights reserved.</p>
+  </footer>
+</body>
+</html>

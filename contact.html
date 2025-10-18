@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uniprep Hub - Contact Us</title>
+
+  <style>
+    body {margin:0;font-family:Arial,sans-serif;background:#f8f9fa;color:#333;}
+    .topbar{background:black;color:white;padding:6px 40px;font-size:14px;display:flex;justify-content:space-between;align-items:center;}
+    .topbar a{color:white;text-decoration:none;}
+    .topbar a:hover{text-decoration:underline;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:white;border-bottom:1px solid #ddd;}
+    .logo{font-size:20px;font-weight:bold;display:flex;align-items:center;}
+    .logo img{height:40px;margin-right:8px;}
+    nav a{margin:0 12px;text-decoration:none;color:black;font-weight:500;}
+    nav a.active,nav a:hover{color:orange;}
+    .contact{padding:60px 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1100px;margin:auto;}
+    .contact h2{margin-bottom:20px;font-size:28px;color:#222;text-align:center;grid-column:span 2;}
+    .contact img{width:100%;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    form{display:flex;flex-direction:column;text-align:left;background:#fff;padding:25px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+    input,textarea{margin:10px 0;padding:12px;border:1px solid #ddd;border-radius:5px;font-size:15px;}
+    textarea{resize:vertical;min-height:100px;}
+    .btn{background:orange;color:white;border:none;padding:12px;border-radius:5px;cursor:pointer;font-weight:bold;margin-top:10px;transition:.3s;}
+    .btn:hover{background:#ff6600;}
+    .status{margin-top:10px;font-size:14px;font-weight:bold;}
+    .downloads{max-width:900px;margin:40px auto;text-align:center;}
+    .downloads h3{margin-bottom:15px;font-size:22px;color:#222;}
+    .downloads a{display:inline-block;margin:8px;padding:10px 18px;background:orange;color:white;border-radius:5px;text-decoration:none;font-weight:bold;transition:.3s;}
+    .downloads a:hover{background:#ff6600;}
+    footer{background:black;color:white;padding:50px 40px;}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;}
+    footer h4{margin-bottom:10px;}
+    footer a{color:white;display:block;margin:5px 0;text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
+    .copy{text-align:center;margin-top:30px;font-size:14px;border-top:1px solid #444;padding-top:15px;}
+    @media (max-width:768px){.contact{grid-template-columns:1fr;}.contact h2{grid-column:span 1;}}
+  </style>
+</head>
+<body>
+  <!-- 🔝 Topbar -->
+  <div class="topbar">
+    <span>📧 <a href="mailto:uniprep85@gmail.com">uniprep85@gmail.com</a></span>
+    <span>📍 <a href="https://www.google.com/maps?q=B-5/18+Sector+K+Aliganj+Lucknow" target="_blank">B-5/18 Sector K Aliganj Lucknow</a></span>
+  </div>
+
+  <!-- 🟠 Navbar -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo01.png" alt="Uniprep Hub Logo"> Uniprep Hub
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html" class="active">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- 🟠 Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80" alt="Coaching Students Image">
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      <p class="status" id="status"></p>
+    </form>
+  </section>
+
+  <!-- 🟠 Download Links -->
+  <div class="downloads">
+    <h3>📥 Download Useful Resources</h3>
+    <a href="downloads/prospectus.pdf" download>📘 Prospectus</a>
+    <a href="downloads/syllabus.pdf" download>📄 Syllabus</a>
+    <a href="downloads/sample-notes.pdf" download>📝 Sample Notes</a>
+  </div>
+
+  <!-- 🟠 Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Essential Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <p>Exam Preparation</p>
+        <p>Mock Tests</p>
+        <p>Personalized Coaching</p>
+        <p>Online Resources</p>
+      </div>
+      <div>
+        <h4>Join Our Community</h4>
+        <p>Discussion Forums</p>
+        <p>Webinars</p>
+        <p>Career Guidance</p>
+        <p>Programs</p>
+      </div>
+      <div>
+        <h4>Connect With Us</h4>
+        <p>📧 <a href="mailto:uniprep85@gmail.com">uniprep85@gmail.com</a></p>
+        <p>📍 Lucknow</p>
+        <p>🔗 Facebook • Twitter • Instagram</p>
+      </div>
+    </div>
+    <p class="copy">© 2025 Uniprep Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- 🔹 Firebase Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDFlP5L0IPMzO68hiXZXFhGExkId4ol2dc",
+      authDomain: "coching-web.firebaseapp.com",
+      projectId: "coching-web",
+      storageBucket: "coching-web.firebasestorage.app",
+      messagingSenderId: "901288631851",
+      appId: "1:901288631851:web:d51a205698f7f46cf7946e",
+      measurementId: "G-B8CMPTPVMD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email) {
+        status.textContent = "⚠️ Please fill required fields";
+        status.style.color = "red";
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "contacts"), {
+          name,
+          email,
+          message,
+          createdAt: serverTimestamp()
+        });
+        status.textContent = "✅ Message sent successfully!";
+        status.style.color = "green";
+        form.reset();
+      } catch (err) {
+        console.error("Error saving message:", err);
+        status.textContent = "❌ Something went wrong. Try again.";
+        status.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
